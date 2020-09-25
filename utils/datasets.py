@@ -696,7 +696,7 @@ def load_mosaic(self, index):
                 scale = (labels4[i, 3] - 2 * s) / bw
                 labels4[i, 2] = labels4[i, 2] + scale * bh
             if labels4[i, 4] > 2 * s:
-                scale = (labels4[i, 3] - 2 * s) / bh
+                scale = (labels4[i, 4] - 2 * s) / bh
                 labels4[i, 1] = labels4[i, 1] + scale * bw
         np.clip(labels4[:, 1:], 0, 2 * s, out=labels4[:, 1:])  # use with random_perspective
         # img4, labels4 = replicate(img4, labels4)  # replicate
